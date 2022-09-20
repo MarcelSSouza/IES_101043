@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class WeatherStarter {
 
     //todo: should generalize for a city passed as argument
-    private static final int CITY_ID_AVEIRO = 1010500;
+    private static final int CITY_ID_AVEIRO = Integer.parseInt(System.getProperty("exec.city_id")); //Para acessar as propriedades do Maven, é necessário usar o System.getProperty juntamente com o exec. + nome da propriedade que queremos acessar.
 
     public static void  main(String[] args ) {
 
