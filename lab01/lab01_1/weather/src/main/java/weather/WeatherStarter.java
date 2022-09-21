@@ -6,12 +6,15 @@ import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  * demonstrates the use of the IPMA API for weather forecast
  */
 public class WeatherStarter {
-
+    public static Logger logger= Logger.getLogger(WeatherStarter.class.getName());
     //todo: should generalize for a city passed as argument
     private static final int CITY_ID_AVEIRO = Integer.parseInt(System.getProperty("exec.city_id")); //Para acessar as propriedades do Maven, é necessário usar o System.getProperty juntamente com o exec. + nome da propriedade que queremos acessar.
 
@@ -38,11 +41,17 @@ public class WeatherStarter {
                 System.out.printf( "max temp for %s is %4.1f %n",
                         firstDay.getForecastDate(),
                         Double.parseDouble(firstDay.getTMax()));
+                        //I want to put firstDay.getForecastDate() and firstDay.getTMax() in the log file using log4j2. I tried to use the logger, but I couldn't make it work.
+                    logger.log(Level.INFO, "logging: {0} {1}",
+                   new Object[] { firstDay.getForecastDate(), Double.parseDouble(firstDay.getTMax())});
             } else {
                 System.out.println( "No results for this request!");
+                logger.log(Level.WARNING, "No results for this request!");
+
             }
         } catch (Exception ex) {
             ex.printStackTrace();
+            logger.log(Level.SEVERE, "Exception: {0}", ex.getMessage());
         }
 
     }
