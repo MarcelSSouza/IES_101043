@@ -41,6 +41,7 @@ public class WeatherStarter {
                 System.out.printf( "max temp for %s is %4.1f %n",
                         firstDay.getForecastDate(),
                         Double.parseDouble(firstDay.getTMax()));
+                        //I want to put firstDay.getForecastDate() and firstDay.getTMax() in the log file using log4j2. I tried to use the logger, but I couldn't make it work.
                     logger.log(Level.INFO, "LOGGING CONSOLE: max temp for {0} is {1}",
                    new Object[] { firstDay.getForecastDate(), Double.parseDouble(firstDay.getTMax())});
             } else {
