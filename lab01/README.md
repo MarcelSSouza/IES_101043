@@ -42,24 +42,9 @@ PARTE 1.4
 
 - Usando docker --help temos acesso a tudo necessario para aprender mais sobre como usar o docker.
 
-- Alguns dos comandos utilizados foram docker run, 
+PARTE 1.5
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Por ser a primeira vez que utilizamos java com APIs, Maven e por ter uma biblioteca altamente verbosa, não consegui terminar esta questão. Ainda que tenha entendido como isolar os projetos pelo Maven, a necessidade de fazer 2 requisições para a API usando serialização se tornou cansativo e altamente verboso.
 
 
 
@@ -82,7 +67,4 @@ git push origin BRANCH (normalmente, será Main)
 
 4) A mensagem de commit deve iniciar com um titulo usando no maximo 50 chars usando Tittle Case. Para além disso, adicionar um corpo na mensagem de commit se for necessário ao tamanho do commit. Nesta mensagem, explicar QUAL foi a mudanca e POR QUE ocorreu a mudanca. Deixar sempre um espaco entre o titulo do commit e o texto. Alem disso, podemos usar o "-" se quisermos pontuar um Bullet Point e separar os parágrafos sempre com uma linha em branco.
 
-
-
-
-
+5)Utilizamos basicamente para ter DataPersistance e, para além disso, possibilitar o container de ler as alterações feitas no nosso código ou file. No exemplo 1.4 letra E, consegimos visualizar tal utilização

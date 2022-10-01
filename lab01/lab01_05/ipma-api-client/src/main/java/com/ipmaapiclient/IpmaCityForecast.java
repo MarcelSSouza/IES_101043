@@ -25,6 +25,7 @@ public class IpmaCityForecast {
         @Expose
         private String dataUpdate;
 
+
         public String getOwner() {
             return owner;
         }

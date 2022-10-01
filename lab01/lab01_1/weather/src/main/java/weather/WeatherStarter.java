@@ -26,11 +26,10 @@ public class WeatherStarter {
                 .addConverterFactory(GsonConverterFactory.create()) //Tive problemas com esta linha. Ao final, tive que adicionar a dependência do GsonConverterFactory no pom.xml
                 .build();
 
-        // create a typed interface to use the remote API (a client)
+        // create a typed interface to use the remote API (a client)    
         IpmaService service = retrofit.create(IpmaService.class);
         // prepare the call to remote endpoint
         Call<IpmaCityForecast> callSync = service.getForecastForACity(CITY_ID_AVEIRO);
-
         try {
             Response<IpmaCityForecast> apiResponse = callSync.execute();
             IpmaCityForecast forecast = apiResponse.body();
