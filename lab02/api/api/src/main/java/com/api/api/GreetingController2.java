@@ -1,4 +1,4 @@
-/*package com.api.api;
+package com.api.api;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -13,7 +13,7 @@ public class GreetingController2 {
 	private final AtomicLong counter = new AtomicLong();
 
 	@GetMapping("/greeting")
-	public Greeting1 greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return new Greeting1(counter.incrementAndGet(), String.format(template, name));
+	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+		return new Greeting(counter.incrementAndGet(), String.format(template, name));
 	}
-}*/
+}
