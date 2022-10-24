@@ -7,3 +7,22 @@ b) Os métodos save(), findAll(), findById() e delete() foram usados. Estes mét
 c)Os dados sao salvos em memória, até que o método flush seja chamado e possa sincronizar os dados com o DB.
 
 d)A anotaçao @NotBlank está declarada utilizando o import javax.validation.constraints.NotBlank, que basicamente nos permite que um valor nao seja Null e tenha um tamanho maior do que zero (para o caso de strings, isso é muito importante, já que podemos enviar "").
+
+
+#A questao 3.2 está presente na pasta employees
+
+Entry Point http://localhost:8080/employees
+Data initial= {"firstName": "Marcel", "lastName": "estudante","emailId": "marcelaraujo@ua.pt"}
+    {
+        "id": 6,
+        "firstName": "Marcel",
+        "lastName": "estudante",
+        "emailId": "marcelaraujo@ua.pt"
+    }
+
+
+
+
+
+
+Spring Data JPA also lets you define other query methods by declaring their method signature. For example, CustomerRepository includes the findByLastName() method.
