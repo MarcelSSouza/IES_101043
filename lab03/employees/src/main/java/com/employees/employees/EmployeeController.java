@@ -1,6 +1,5 @@
 package com.employees.employees;
 import java.util.HashMap;
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;

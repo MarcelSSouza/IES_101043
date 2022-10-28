@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class UserController {
 private final UserRepository userRepository;
+
 @Autowired
    public UserController(UserRepository userRepository) {
     this.userRepository = userRepository;
@@ -42,7 +43,7 @@ private final UserRepository userRepository;
 
     @GetMapping("/edit/{id}")
     public String showUpdateForm(@PathVariable("id") long id, Model model) {
-        User user = userRepository.findById(id)
+        User user = userRepository.findById(id) 
                 .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
 
         model.addAttribute("user", user);

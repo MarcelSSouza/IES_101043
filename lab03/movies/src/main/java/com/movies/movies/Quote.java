@@ -9,8 +9,14 @@ public class Quote {
     private String quote;
     @ManyToOne  
     private Movie movie;  
+
     public Quote() {
     }
+
+    public Quote(String quote) {
+        this.quote = quote;
+    }
+
     public Quote(String quote, Movie movie) {
         this.quote = quote;
         this.movie = movie;

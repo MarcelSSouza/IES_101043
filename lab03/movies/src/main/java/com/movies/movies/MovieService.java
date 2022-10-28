@@ -44,7 +44,28 @@ public class MovieService {
         return movieRepository.save(movie);
     }
 
-
-
+    public Quote getRandomQuote() {
+        Iterable<Movie> movies = getAllMovies();
+        int movieCount = 0;
+        for (Movie movie : movies) {
+            movieCount++;
+        }
+        int randomMovie = (int) (Math.random() * movieCount);
+        int quoteCount = 0;
+        for (Movie movie : movies) {
+            if (quoteCount == randomMovie) {
+                int randomQuote = (int) (Math.random() * movie.getQuotes().size());
+                int quoteCounter = 0;
+                for (Quote quote : movie.getQuotes()) {
+                    if (quoteCounter == randomQuote) {
+                        return quote;
+                    }
+                    quoteCounter++;
+                }
+            }
+            quoteCount++;
+        }
+        return null;
+    }
 
 }

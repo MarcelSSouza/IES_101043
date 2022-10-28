@@ -41,4 +41,8 @@ public class MovieController {
     public Quote createQuote(@RequestBody Quote quote) {
         return quote;
     }
+    @GetMapping("/Randomquotes")
+    public Quote getRandomQuote() {
+        return movieService.getRandomQuote();
+    }
 }
