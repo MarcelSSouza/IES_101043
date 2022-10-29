@@ -1,6 +1,19 @@
 NOTAS IMPORTANTES
 Spring Data JPA also lets you define other query methods by declaring their method signature. For example, CustomerRepository includes the findByLastName() method.
 
+
+# Respostas para as primeiras perguntas 
+
+- O userRepository é instanciado automaticamente pelo Spring Boot, mais especificamente pelo Spring Data JPA. Para além disso, o Spring Data JPA também cria uma implementação do UserRepository, que é injetada no UserController.
+
+- Os metodos invocados pelo userRepository são: save, findAll, findById, deleteById
+
+- Os dados são guardados na base de dados H2, que é uma base de dados em memória. Para aceder à base de dados, basta aceder ao endereço http://localhost:8080/h2-console 
+
+- A regra para o @NotBlank é que o campo não pode ser nulo e não pode estar vazio. O @Size é para definir o tamanho máximo do campo. Está definida pelo Validator do Spring Boot.
+
+
+
 # REVIEW QUESTIONS
 
 ## QUESTAO A
@@ -12,7 +25,8 @@ Para além do RestController ser algo muitíssimo mais atual, afinal, só foi ad
 
 ## QUESTAO B
 
-Spring Data JPA also lets you define other query methods by declaring their method signature. For example, CustomerRepository includes the findByLastName() method.
+Os diagramas estão na pasta Employees
+
 ## QUESTAO C
 Todas essas notações fazem parte do pacote DataJPA e servem respetivamente para:
 @Column= Dar um nome específico para a coluna em questão na base de dados SQL (pode ser omitida e assim teremos um nome default)

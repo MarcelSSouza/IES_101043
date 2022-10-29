@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class UserController {
 private final UserRepository userRepository;
-
-@Autowired
+  
+  @Autowired
    public UserController(UserRepository userRepository) {
     this.userRepository = userRepository;
     }
