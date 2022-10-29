@@ -2,12 +2,14 @@ package com.movies.movies;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 public class Quote {
     private long id;
     private String quote;
     @ManyToOne  
+    @JoinColumn(name="movie_id", nullable=true)
     private Movie movie;  
 
     public Quote() {

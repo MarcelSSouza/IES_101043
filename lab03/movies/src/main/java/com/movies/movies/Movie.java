@@ -3,6 +3,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.lang.String;
 import java.util.ArrayList;
@@ -14,7 +15,8 @@ import java.util.ArrayList;
 public class Movie {
     private long  id;
     private String show_name;
-    private ArrayList<Quote> quotes;
+    @OneToMany(mappedBy = "movie")
+    private ArrayList<Quote> quotes = new ArrayList<Quote>();
 
     public Movie() {
     }

@@ -30,7 +30,7 @@ public class MovieController {
         return movieService.updateMovie(movie);
     }
     @PostMapping("/movies/{id}/quotes")
-    public Movie addQuoteToMovie(@PathVariable long id, @RequestBody Quote quote) {
+    public Movie addQuoteToMovie(@PathVariable long id, @RequestBody Quote quote) throws Exception {
         return movieService.addQuoteToMovie(id, quote);
     }
     @DeleteMapping("/movies/{id}/quotes")
