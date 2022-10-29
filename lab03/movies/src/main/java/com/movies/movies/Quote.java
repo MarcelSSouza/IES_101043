@@ -1,16 +1,28 @@
 package com.movies.movies;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "Quotes")
 public class Quote {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
     private String quote;
-    @ManyToOne  
-    @JoinColumn(name="movie_id", nullable=true)
-    private Movie movie;  
+    
+    @ManyToOne
+    @JoinColumn(name="MOV_ID", nullable=false)    
+    public Movie movie;
+
+    
+
 
     public Quote() {
     }
@@ -24,8 +36,7 @@ public class Quote {
         this.movie = movie;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     public long getId() {
         return id;
     }

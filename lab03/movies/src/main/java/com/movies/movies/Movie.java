@@ -1,4 +1,5 @@
 package com.movies.movies;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -6,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.lang.String;
-import java.util.ArrayList;
+import java.util.Set;
 
 
  
@@ -15,8 +16,11 @@ import java.util.ArrayList;
 public class Movie {
     private long  id;
     private String show_name;
-    @OneToMany(mappedBy = "movie")
-    private ArrayList<Quote> quotes = new ArrayList<Quote>();
+
+    @OneToMany(targetEntity= com.movies.movies.Quote.class ,mappedBy = "movie", cascade = CascadeType.ALL)
+    public Set<Quote> quotes;
+
+
 
     public Movie() {
     }
@@ -52,14 +56,13 @@ public class Movie {
         return this;
     }
 
-    public ArrayList<Quote> getQuotes() {
+    public Set<Quote> getQuotes() {
         return this.quotes;
     }
 
-    public void setQuotes(ArrayList<Quote> quotes) {
+    public void setQuotes(Set<Quote> quotes) {
         this.quotes = quotes;
     }
-
 
   
 }
