@@ -1,5 +1,4 @@
 package com.movies.movies;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +15,7 @@ public class Quote {
     private long id;
 
     private String quote;
-    
+
     @ManyToOne
     @JoinColumn(name="MOV_ID", nullable=false)    
     public Movie movie;

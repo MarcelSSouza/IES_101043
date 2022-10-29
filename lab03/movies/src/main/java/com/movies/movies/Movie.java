@@ -17,12 +17,26 @@ import java.util.Set;
 @Table(name = "Movies")
 public class Movie {
     private long  id;
+    private String title;
+    private String director;
+    private String year;
     private String show_name;
     @OneToMany(targetEntity= com.movies.movies.Quote.class ,mappedBy = "movie", cascade = CascadeType.ALL)
     @ElementCollection
     public ArrayList <Quote>  quotes = new ArrayList <Quote> ();
 
 
+    public Movie(String title, String director, String year, String show_name) {
+        this.title = title;
+        this.director = director;
+        this.year = year;
+        this.show_name = show_name;
+    }
+
+    public Movie(String title, String director) {
+        this.title = title;
+        this.director = director;
+    }
 
     public Movie() {
     }
@@ -65,6 +79,63 @@ public class Movie {
     public ArrayList <Quote>  getQuotes() {
         return this.quotes;
     }
+
+    public Movie quotes(ArrayList <Quote>  quotes) {
+        setQuotes(quotes);
+        return this;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+
+    public Movie title(String title) {
+        setTitle(title);
+        return this;
+    }
+
+    public String getDirector() {
+        return this.director;
+    }
+
+
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+
+    public Movie director(String director) {
+        setDirector(director);
+        return this;
+    }
+
+
+    public String getYear() {
+        return this.year;
+    }
+
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+
+    public Movie year(String year) {
+        setYear(year);
+        return this;
+    }
+
+    public Movie id(Long id) {
+        this.id = id;
+        return this;
+    }
+
+
 
   
 }
